@@ -1,0 +1,105 @@
+standards:
+  id: engineering-standards
+  version: 0.1.0
+
+rules:
+  constitution:
+    id: constitution
+    priority: 0
+    always: true
+    path: constitution
+
+  decisions:
+    id: decisions
+    priority: 10
+    always: true
+    path: decisions
+
+  project-structure:
+    id: project-structure
+    priority: 20
+    always: true
+    path:
+      - validators/project-structure.md
+      - validators/dependencies.md
+    checks:
+      - type: file_exists
+        level: recommended
+        pattern: README.md
+
+  backend:
+    id: backend
+    priority: 30
+    when:
+      capabilities.backend: true
+    path: capabilities/backend.md
+
+  frontend:
+    id: frontend
+    priority: 30
+    when:
+      capabilities.frontend: true
+    path: capabilities/frontend.md
+
+  database:
+    id: database
+    priority: 30
+    when:
+      capabilities.database: true
+    path: capabilities/database.md
+
+  cache:
+    id: cache
+    priority: 30
+    when:
+      capabilities.cache: true
+    path: capabilities/cache.md
+
+  messaging:
+    id: messaging
+    priority: 30
+    when:
+      capabilities.mq: true
+    path: capabilities/messaging.md
+
+  ai:
+    id: ai
+    priority: 30
+    when:
+      capabilities.ai: true
+    path: capabilities/ai.md
+
+  file-storage:
+    id: file-storage
+    priority: 30
+    when:
+      capabilities.fileStorage: true
+    path: capabilities/file-storage.md
+
+  offline-deployment:
+    id: offline-deployment
+    priority: 30
+    when:
+      deployment.internetAccess: false
+    path: capabilities/offline-deployment.md
+
+  java:
+    id: java
+    priority: 40
+    when:
+      stack.backend.language: java
+    path: stacks/java.md
+
+  vue:
+    id: vue
+    priority: 40
+    when:
+      stack.frontend.framework: vue
+    path: stacks/vue.md
+
+  postgresql:
+    id: postgresql
+    priority: 40
+    when:
+      stack.database.type: postgresql
+    path: stacks/postgresql.md
