@@ -1,6 +1,6 @@
 standards:
   id: engineering-standards
-  version: 0.1.0
+  version: 0.2.0
 
 rules:
   constitution:
@@ -83,6 +83,20 @@ rules:
       deployment.internetAccess: false
     path: capabilities/offline-deployment.md
 
+  api-documentation:
+    id: api-documentation
+    priority: 30
+    when:
+      capabilities.apiDocumentation: true
+    path: capabilities/api-documentation.md
+
+  authorization:
+    id: authorization
+    priority: 30
+    when:
+      capabilities.authorization: true
+    path: capabilities/authorization.md
+
   java:
     id: java
     priority: 40
@@ -90,12 +104,96 @@ rules:
       stack.backend.language: java
     path: stacks/java.md
 
+  java-version:
+    id: java-version
+    priority: 40
+    when:
+      stack.backend.language: java
+    path: stacks/java-version.md
+
+  lombok:
+    id: lombok
+    priority: 40
+    when:
+      stack.backend.language: java
+    path: stacks/lombok.md
+
+  spring-boot-monolith:
+    id: spring-boot-monolith
+    priority: 40
+    when:
+      stack.backend.framework: spring-boot-monolith
+    path: stacks/spring-boot-monolith.md
+
+  spring-cloud:
+    id: spring-cloud
+    priority: 40
+    when:
+      stack.backend.framework: spring-cloud
+    path: stacks/spring-cloud.md
+
+  nodejs:
+    id: nodejs
+    priority: 40
+    when:
+      stack.backend.language: nodejs
+    path: stacks/nodejs.md
+
   vue:
     id: vue
     priority: 40
     when:
       stack.frontend.framework: vue
     path: stacks/vue.md
+
+  nextjs:
+    id: nextjs
+    priority: 40
+    when:
+      stack.frontend.framework: nextjs
+    path: stacks/nextjs.md
+
+  ant-design:
+    id: ant-design
+    priority: 40
+    when:
+      stack.frontend.uiLibrary: ant-design
+    path: stacks/ant-design.md
+
+  ant-design-vue:
+    id: ant-design-vue
+    priority: 40
+    when:
+      stack.frontend.uiLibrary: ant-design-vue
+    path: stacks/ant-design-vue.md
+
+  ant-design-pro:
+    id: ant-design-pro
+    priority: 40
+    when:
+      stack.frontend.adminScaffold: ant-design-pro
+    path: stacks/ant-design-pro.md
+
+  vben-admin:
+    id: vben-admin
+    priority: 40
+    when:
+      stack.frontend.adminScaffold: vben-admin
+    path: stacks/vben-admin.md
+
+  tailwindcss:
+    id: tailwindcss
+    priority: 40
+    when:
+      stack.frontend.cssFramework: tailwindcss
+    path: stacks/tailwindcss.md
+
+  flyway:
+    id: flyway
+    priority: 40
+    when:
+      stack.database.migrationTool: flyway
+    path: stacks/flyway.md
 
   postgresql:
     id: postgresql
